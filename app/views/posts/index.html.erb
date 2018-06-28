@@ -1,1 +1,29 @@
-<h1 class="title">Blog Index</h1>
+<% content_for :page_title, "Index"%>
+
+<section class="section">
+   <div class="container">
+      <% @posts.each do |post|%>
+        <div class="card">
+          <div class="card-content">
+           <div class="media">
+            <div class="media-content">
+              <p class="title is-3">
+                    <% #post title %>
+                    <%= link_to post.title, post %>
+              </p>
+            </div>
+          </div>
+          <div class="content">
+            <% #post content %>
+            <%= post.content %>
+          </div>
+          <div class="comment-content">
+            <!-- <span class="tag is-rounded is-medium is-success">
+                <% #comment content %>
+            </span> -->
+          </div>
+        </div>
+      </div>
+      <% end %>
+   </div>
+</section>
